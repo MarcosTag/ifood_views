@@ -1,2 +1,5 @@
 @import url(../fonts/ifood_rc_titulos/stylesheet.css); /*importa a tipografia para títulos*/
 @import url(../fonts/ifood_rc_textos/stylesheet.css); /*importa a tipografia para textos*/
+
+@import url(../css/reset.css);
+@import url(../css/global.css);
