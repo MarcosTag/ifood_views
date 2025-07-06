@@ -3,14 +3,72 @@
  *
  * GLOBAL CSS
  */
+:root {
+  --primary-up: #9a1919;
+
+  --simple-border: 1px solid #dcdcdc;
+  --simple-border-color: #dcdcdc;
+  --color-disabled: #a6a6a6;
+
+  --notice: #007aff;
+}
+
+body {
+  max-height: 100vh;
+  overflow: hidden;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:link,
+a:visited {
+  color: var(--primary);
+}
+
+a:link:hover,
+a:visited:hover {
+  color: var(--primary-up);
+  text-decoration: underline;
+}
+
 .btn {
   font-family: "iFood RC Titulos";
   width: 100%;
   height: 50px;
+  border: none;
+  border-radius: 4px;
   font-size: 1rem;
   font-weight: 500;
   cursor: pointer;
+  transition: 0.2s;
 }
+
+.btn-primary {
+  background: var(--primary);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: var(--primary-up);
+}
+
+.btn-social {
+  background: transparent;
+  border: var(--simple-border);
+}
+
+.btn-social:hover {
+  border-color: var(--primary);
+}
+
+*:focus,
+*:required:valid {
+  outline-color: #efa14d;
+}
+
+/***** ******************************************************/
 
 header {
   .box-header {
@@ -48,11 +106,39 @@ main {
     .area-login {
       display: grid;
       grid-template-columns: 1fr 1fr;
+      align-items: center;
+
+      .ilustration {
+        width: 90%;
+        height: 800px;
+
+        > svg {
+          position: relative;
+          top: 10%;
+        }
+      }
+
+      .ilustration::before {
+        content: "teste";
+        position: absolute;
+        top: -18vh;
+        left: 0;
+        width: 130vh;
+        height: 135vh;
+        background: #fdedee;
+        z-index: -1;
+        border-radius: 0 100% 100% 0;
+      }
 
       .box-login {
         max-width: 510px;
         padding: 36px 50px;
-        border: 1px solid red;
+        border-radius: 8px;
+        max-height: max-content;
+        background: white;
+        /* border: 1px solid red; */
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05),
+          0 4px 16px rgba(0, 0, 0, 0.06);
 
         > h1,
         > h2 {
@@ -74,6 +160,8 @@ main {
         }
 
         .login-social {
+          margin-bottom: 20px;
+
           .divisor-or {
             text-align: center;
             position: relative;
@@ -85,7 +173,7 @@ main {
             display: flex;
             width: 100%;
             height: 1px;
-            background: red;
+            background: var(--simple-border-color);
             position: absolute;
             top: 50%;
             z-index: -2;
@@ -116,6 +204,10 @@ main {
             }
           }
         }
+
+        .text-for-register-in-login {
+          text-align: center;
+        }
       }
     }
   }
@@ -141,9 +233,11 @@ form {
       top: calc(50% - 15px);
       left: 10px;
       padding: 5px;
+      border-radius: 8px;
       background: white;
       transition: 0.3s;
       pointer-events: none;
+      color: var(--color-disabled);
     }
 
     /* .label-float-input:required:invalid + label:before {
@@ -157,6 +251,11 @@ form {
     .label-float-input:required:valid + label {
       top: -13px;
       font-size: 14px;
+    }
+
+    .label-float-input {
+      border: var(--simple-border);
+      border-radius: 4px;
     }
   }
 
