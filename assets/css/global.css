@@ -17,6 +17,7 @@ h6 {
 
 p,
 div,
-span {
+span,
+label {
   font-family: "iFood RC Textos";
 }
