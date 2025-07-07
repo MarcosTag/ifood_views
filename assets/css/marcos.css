@@ -10,6 +10,10 @@
   --simple-border-color: #dcdcdc;
   --color-disabled: #a6a6a6;
 
+  --support_text: #3c4043;
+  --support_1: #414143;
+  --support_2: #717171;
+
   --notice: #007aff;
 }
 
@@ -57,6 +61,7 @@ a:visited:hover {
 .btn-social {
   background: transparent;
   border: var(--simple-border);
+  color: var(--support_text);
 }
 
 .btn-social:hover {
@@ -107,6 +112,7 @@ main {
       display: grid;
       grid-template-columns: 1fr 1fr;
       align-items: center;
+      color: var(--support_text);
 
       .ilustration {
         width: 90%;
@@ -151,12 +157,14 @@ main {
           letter-spacing: -0.0024em;
           margin: 0 0 30px;
           line-height: 50px;
+          color: var(--support_1);
         }
 
         > h2 {
           font-size: 1.5rem;
           font-weight: 400;
           margin: 0 0 32px;
+          color: var(--support_2);
         }
 
         .login-social {
@@ -166,6 +174,8 @@ main {
             text-align: center;
             position: relative;
             margin-bottom: 20px;
+            z-index: 1;
+            color: var(--support_2);
           }
 
           .divisor-or::after {
