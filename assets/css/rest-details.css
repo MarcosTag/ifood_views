@@ -1,0 +1,402 @@
+/*  ===================================================
+    Definições da página de detalhes de um restaurante 
+    =================================================== */
+
+li {
+    list-style: none;    
+    text-decoration: none;   
+}
+
+#header {
+    display: flex;        
+    position: sticky;
+    background-color: #fff;
+    top: 0;
+    z-index: 9997;
+    align-items: center;
+    width: 100vw;
+    height: 80px;
+    column-gap: 24px;
+    box-sizing: border-box;
+    box-shadow: inset 0 -1px 0 #dcdcdc;    
+    unicode-bidi: isolate;
+    padding: 20px 32px;
+}
+
+.header--logo-ifood {
+    flex-shrink: 0;    
+    width: 62px;
+    align-items: center;    
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.header--logo-ifood a {   
+    margin: 3px 5px;    
+    padding: 0; 
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    transition: .1s;
+    box-sizing: border-box;
+    border: none;
+}
+
+.header--logo-ifood svg{
+    background: transparent;
+    color: var(--primary);
+    fill: var(--primary);
+    width: 100%;
+    height: 100%;
+}
+
+.header--nav-main {    
+    display: block;
+    overflow-x: unset;
+    transition: .5s;
+    background: #fff;
+    unicode-bidi: isolate;
+    flex-shrink: 0;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.nav-menu-1 ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    flex-flow: row nowrap; 
+    min-width: 360px;
+    gap: 15px;
+}
+
+.nav-menu-1 ul ::selection {
+    color: #fff;
+    background: #ea1d2c;
+}
+
+.nav-menu-1 ul li {  
+    display: list-item;
+    text-align: -webkit-match-parent;
+    unicode-bidi: isolate;
+    font-family: "iFood RC Titulos", "iFood RC Textos", helvetica, sans-serif;  
+    list-style: none;
+    text-decoration: none;
+    color: #717171;
+    font-size: .875rem;
+    cursor: pointer;
+}
+
+.nav-menu-1 ul li.nav-menu-1--ativo {
+    color: red;
+}
+
+.nav-menu-2 {
+    display: none;
+}
+
+.header--search {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0;
+    color: var(--primary);
+    fill: var(--primary);
+}
+
+.header--search form {
+    position: relative;
+    display: grid;
+    grid-template: 1fr / 1fr;
+    height: 100%;
+}
+
+.header--search form ::selection {
+    color: #fff;
+    background: #ea1d2c;
+}
+
+.search--icon-text {
+    color: var(--primary);
+    position: relative;
+    display: flex;
+    flex-grow: 1;
+    padding: 0;
+    width: 100%;
+    align-items: center;
+    background-color: #fff;
+    box-sizing: border-box;
+    border-radius: 8px;
+    margin-right: 0;
+}
+
+.search--icon-lupa {
+    width: 24px;
+    height: 22px;
+    left: 15px;
+}
+
+.search--icon-text svg {
+    color: var(--primary);
+    height: auto;
+}
+
+.header--search input {    
+    display: flex;
+    width: 100%;
+    height: 48px;
+    padding-left: 50px;
+    padding-right: 0;
+    line-height: 1.25em;
+    font-weight: 300;
+    border-radius: 8px;
+    min-width: 320px;
+    border: none;
+    font-size: 1rem;
+    background-color: #f7f7f7;
+}
+
+
+.header--street {
+    flex-shrink: 0;
+}
+
+.header--user-basket {
+    display: flex;
+    flex-shrink: 0;
+
+    border: 2px solid #2b2fff;
+}
+
+.user-basket--icon {    
+    display: flex;
+
+    border: 2px solid #ff672b;
+}
+
+
+
+
+
+
+
+main {    
+        padding-bottom: 30px;
+        max-width: 100%;
+}
+
+.rest-banner {
+    padding: 35px 30px 0;
+    width: 100%;
+    max-width: 1366px;
+    position: relative;
+    margin: auto;
+    box-sizing: border-box;        
+}
+
+.rest-banner--img {
+    background-image: url(../img/img-macdonalds/banner-mac.avif);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    aspect-ratio: 15 / 4;
+    width: 100%;
+    height: auto;
+    max-height: 250px;
+    border-radius: 4px;
+}
+
+
+main > header {  
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 8px; 
+    margin: 30px auto 20px;
+    padding: 0 30px;
+    width: 100%;
+    max-width: 1366px;
+}
+
+
+.rest-title {
+    display: flex;    
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 5px;
+}
+
+/* define o tamanho do logo */
+.rest-title--logo img{
+        height: 75px;
+        width: 75px;
+}
+
+.rest-title > h1 {    
+    margin: 0 0 2px;
+    font-family: "iFood RC Titulos", "iFood RC Textos", helvetica, sans-serif;
+    color: var(--title-color);
+    font-size: 2.25rem;
+    line-height: 44px;   
+    font-weight: 400;
+    letter-spacing: -1px; 
+}
+
+.rest-title--rating {
+    font-weight: 500;
+    color: var(--rating-color);
+    fill: var(--rating-color);
+}
+
+/* estrela de pontuação */
+.rest-title--rating svg {
+    color: var(--rating-color);
+    height: auto;
+}
+
+
+
+/* aumenta o  tamanho da estrela no título da página do restaurante */
+.rating-detail svg{
+    min-width: 13px;
+}
+
+.rest-details {    
+    display: flex;    
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 30px;
+}
+
+.rest-details--button {
+    font-size: 16px;
+    line-height: 19.79px;
+    font-weight: 700;
+    font-family: "iFood RC Textos", helvetica, sans-serif;
+    color: var(--primary);
+    cursor: pointer;
+}
+
+.rest-details--min-order {
+    color: var(--text-color);
+    font-size: 12px;
+    font-weight: 400;    
+    font-family: "iFood RC Textos", helvetica, sans-serif;
+    border-left: 1px solid var(--text-color);
+    padding-left: 30px;
+}
+
+.min-order--moeda {
+    display: inline-block;
+    border-radius: 100%;
+    width: 16px;
+    height: 16px;
+    font-weight: 700;
+    font-size: 11px;
+    text-align: center;
+    color: #fff;
+    background-color: #a6a6a5;
+    margin-right: 8px;    
+    line-height: 16px;
+}
+
+
+
+.rest-products {
+    max-width: 1366px;
+    margin: auto;
+    
+        padding: 0 30px;
+}
+
+.rest-products--title {
+    width: 100%;
+    padding: 20px 0 20px;
+    font-size: 1.5rem;
+    font-weight: 500;
+    letter-spacing: -1px;
+    color: var(--title-color);
+}
+
+
+.rest-products ul {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 30px;
+    font-family: iFood RC Textos, helvetica, sans-serif;
+    font-size: 16px;
+}
+
+.rest-products ul li {
+    margin: 0;
+    padding: 20px;
+    width: 100%;
+    min-width: 320px;
+    height: 100%;
+    min-height: 147px;
+    grid-template-columns: 1fr 180px;
+    grid-gap: 15px;   
+        
+    border: 1px solid #f2f2f2;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .05);
+    border-radius: 4px; 
+    
+    overflow: hidden;
+    cursor: pointer;
+    
+    transition: .2s;
+
+}
+
+.rest-products h3 {
+    margin: 0 0 18px;
+    font-family: "iFood RC Textos", helvetica, sans-serif;
+    font-size: 1.125rem;
+    font-weight: 400;
+    color: var(--title-color);
+    line-height: 1.5rem;
+}
+
+
+/* ======= alguma responsividade ======== */
+
+@media screen and (max-width: 1030px) {
+  
+    
+.rest-title--logo img{
+    height: 60px;
+    width: 60px;
+}
+
+.rest-title > h1 {    
+    font-size: 1.4rem;
+}
+
+
+
+}
+
+
+
+@media screen and (max-width: 815px) {
+  
+ 
+.rest-title--logo img{
+    height: 67px;
+    width: 67px;
+}
+.rest-title > h1 {    
+    font-size: 1.2rem;
+    line-height: 18px;
+}
+
+
+}
