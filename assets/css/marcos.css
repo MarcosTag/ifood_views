@@ -1,0 +1,366 @@
+/**
+ *
+ *
+ * GLOBAL CSS
+ */
+:root {
+  --primary-up: #9a1919;
+
+  --simple-border: 1px solid #dcdcdc;
+  --simple-border-color: #dcdcdc;
+  --color-disabled: #a6a6a6;
+
+  --support_text: #3c4043;
+  --support_1: #414143;
+  --support_2: #717171;
+
+  --notice: #007aff;
+}
+
+@keyframes mtDots {
+  /* from {
+    top: 0;
+  } */
+  to {
+    top: -2px;
+  }
+}
+
+body {
+  max-height: 100vh;
+  overflow: hidden;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:link,
+a:visited {
+  color: var(--primary);
+}
+
+a:link:hover,
+a:visited:hover {
+  color: var(--primary-up);
+  text-decoration: underline;
+}
+
+.btn {
+  font-family: "iFood RC Titulos";
+  width: 100%;
+  height: 50px;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: var(--primary-up);
+}
+
+.btn-social {
+  background: transparent;
+  border: var(--simple-border);
+  color: var(--support_text);
+}
+
+.btn-social:hover {
+  border-color: var(--primary);
+  background: #fdedee;
+}
+
+*:focus,
+*:required:valid {
+  outline-color: #efa14d;
+}
+
+/***** ******************************************************/
+
+header {
+  .box-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 45px 45px 0 45px;
+
+    .logo-ifood svg {
+      color: var(--primary);
+      fill: var(--primary);
+    }
+
+    .faq {
+      padding: 10px;
+      max-width: max-content;
+      display: flex;
+      box-shadow: 0 2px 8px 0 hsla(0, 0%, 8%, 0.161);
+      border-radius: 20px;
+
+      svg {
+        width: 20px;
+        height: 20px;
+        transition: 0.2s;
+      }
+    }
+
+    .faq:hover {
+      svg {
+        transform: scale(1.1);
+      }
+    }
+  }
+}
+
+main {
+  .box-content {
+    max-width: 1366px;
+    width: 100%;
+    margin: auto;
+    padding: 0 30px;
+
+    .area-login {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      color: var(--support_text);
+
+      .ilustration {
+        width: 90%;
+        height: 800px;
+
+        > svg {
+          position: relative;
+          top: 10%;
+        }
+      }
+
+      .ilustration::before {
+        content: "teste";
+        position: absolute;
+        top: -18vh;
+        left: 0;
+        width: 130vh;
+        height: 135vh;
+        background: #fdedee;
+        z-index: -1;
+        border-radius: 0 100% 100% 0;
+      }
+
+      .box-login {
+        max-width: 510px;
+        padding: 36px 50px;
+        border-radius: 8px;
+        max-height: max-content;
+        background: white;
+        /* border: 1px solid red; */
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05),
+          0 4px 16px rgba(0, 0, 0, 0.06);
+
+        > h1,
+        > h2 {
+          text-align: center;
+        }
+
+        > h1 {
+          font-size: 2.5rem;
+          font-weight: 500;
+          letter-spacing: -0.0024em;
+          margin: 0 0 30px;
+          line-height: 50px;
+          color: var(--support_1);
+        }
+
+        > h2 {
+          font-size: 1.5rem;
+          font-weight: 400;
+          margin: 0 0 32px;
+          color: var(--support_2);
+        }
+
+        .login-social {
+          margin-bottom: 20px;
+
+          .divisor-or {
+            text-align: center;
+            position: relative;
+            margin-bottom: 20px;
+            z-index: 1;
+            color: var(--support_2);
+          }
+
+          .divisor-or::after {
+            content: "";
+            display: flex;
+            width: 100%;
+            height: 1px;
+            background: var(--simple-border-color);
+            position: absolute;
+            top: 50%;
+            z-index: -2;
+          }
+
+          .divisor-or::before {
+            content: "";
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: white;
+            position: absolute;
+            z-index: -1;
+            top: calc(50% - 20px);
+            transform: translateX(-11px);
+            border-radius: 50%;
+          }
+
+          .btns-socials {
+            display: flex;
+            gap: 20px;
+
+            .btn-social {
+              display: flex;
+              gap: 10px;
+              justify-content: center;
+              align-items: center;
+            }
+          }
+        }
+
+        .text-for-register-in-login {
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+
+form {
+  > * {
+    margin-bottom: 20px;
+  }
+
+  .label-float {
+    position: relative;
+
+    .label-float-input {
+      height: 50px;
+      width: 100%;
+      font-size: 1rem;
+      padding: 5px 13px;
+    }
+
+    .label-float-label {
+      position: absolute;
+      top: calc(50% - 15px);
+      left: 10px;
+      padding: 5px;
+      border-radius: 8px;
+      background: white;
+      transition: 0.3s;
+      pointer-events: none;
+      color: var(--color-disabled);
+    }
+
+    /* .label-float-input:required:invalid + label:before {
+      content: "*";
+      color: transparent;
+      position: absolute;
+      left: 0;
+    } */
+
+    .label-float-input:focus + label,
+    .label-float-input:required:valid + label,
+    .label-float-input:hover + label {
+      top: -13px;
+      font-size: 14px;
+    }
+
+    .label-float-input {
+      border: var(--simple-border);
+      border-radius: 4px;
+    }
+
+    .label-float-input:hover {
+      border-color: var(--primary);
+    }
+  }
+
+  .remember {
+    display: flex;
+    justify-content: space-between;
+    .label-checkbox {
+      display: flex;
+      gap: 5px;
+    }
+  }
+}
+
+/******************** INDEX */
+.alert-login {
+  text-align: center;
+  max-width: max-content;
+
+  padding: 30px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05), 0 4px 16px rgba(0, 0, 0, 0.06);
+  background: white;
+  border-radius: 8px;
+
+  > h1 {
+    font-weight: 500;
+  }
+
+  > h2 {
+    margin: auto;
+    margin-top: 10px;
+    max-width: 70%;
+    color: var(--support_2);
+    font-weight: 400;
+    font-size: 1.2rem;
+  }
+
+  .alert-redirect {
+    display: flex;
+    justify-content: center;
+
+    align-items: baseline;
+    gap: 5px;
+    margin-top: 50px;
+
+    .dots {
+      display: flex;
+      gap: 20px;
+      position: relative;
+      width: 4px;
+      height: 4px;
+      border-radius: 2px;
+      background: var(--primary);
+      top: 3px;
+    }
+
+    .dots {
+      animation-name: mtDots;
+      animation-duration: 0.6s;
+      animation-timing-function: ease;
+      animation-direction: alternate;
+      animation-iteration-count: infinite;
+    }
+
+    .dots:nth-child(1) {
+      animation-delay: 0;
+    }
+
+    .dots:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+
+    .dots:nth-child(3) {
+      animation-delay: 0.4s;
+    }
+  }
+}

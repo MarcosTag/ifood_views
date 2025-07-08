@@ -4,10 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../assets/css/style.css" />
-
-    <!-- REDIRECIONA PARA A PÁGINA DE LOGIN, SIMULANDO QUE O USUÁRIO NÃO ESTÁ LOGADO -->
-    <meta http-equiv="refresh" content="3; url=pages/login.html" />
-    <title>Ifood - Home</title>
+    <title>Ifood - Login</title>
   </head>
 
   <body>
@@ -683,13 +680,67 @@
               ></path>
             </svg>
           </div>
-          <div class="alert-login">
-            <h1>Realize o seu login ou cadastre-se</h1>
-            <h2>para acessar os melhores restaurantes da sua região</h2>
+          <div class="box-login">
+            <h1>Falta pouco para matar sua fome!</h1>
+            <h2>Como deseja continuar?</h2>
+            <form action="restaurant-details.html" method="post">
+              <div class="label-float">
+                <input
+                  type="text"
+                  name="login"
+                  class="label-float-input"
+                  id="login"
+                  required
+                />
+                <label for="login" class="label-float-label"
+                  >Informe o seu e-mail</label
+                >
+              </div>
 
-            <div class="btn alert-redirect">
-              Você está sendo redirecionado <span class="dots"></span
-              ><span class="dots"></span><span class="dots"></span>
+              <div class="label-float">
+                <input
+                  type="password"
+                  name="password"
+                  class="label-float-input"
+                  id="password"
+                  required
+                />
+                <label for="password" class="label-float-label"
+                  >Informe sua senha</label
+                >
+              </div>
+
+              <div class="remember">
+                <label for="remember" class="label-checkbox"
+                  ><input
+                    type="checkbox"
+                    name="remember"
+                    id="remember"
+                  />Lembre-me</label
+                >
+                <a href="">Perdeu sua senha?</a>
+              </div>
+
+              <button type="submit" class="btn btn-primary">Continuar</button>
+            </form>
+            <div class="login-social">
+              <div class="divisor-or">ou</div>
+              <div class="btns-socials">
+                <button class="btn btn-social">
+                  <img src="../assets/img/Google__G__logo 1.svg" alt="" />Google
+                </button>
+                <button class="btn btn-social">
+                  <img
+                    src="../assets/img/Facebook__logo 1.svg"
+                    alt=""
+                  />Facebook
+                </button>
+              </div>
+            </div>
+
+            <div class="text-for-register-in-login">
+              Ainda não possui uma conta?
+              <a href="http://" class="link-register">Registre-se Agora</a>
             </div>
           </div>
         </div>
