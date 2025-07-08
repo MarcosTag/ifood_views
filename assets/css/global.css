@@ -12,12 +12,12 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "iFood RC Titulos";
+  font-family: "iFood RC Titulos", helvetica, sans-serif;
 }
 
 p,
 div,
 span,
 label {
-  font-family: "iFood RC Textos";
+  font-family: "iFood RC Textos", helvetica, sans-serif;
 }
